@@ -1,5 +1,6 @@
 package cn.com.xuxiaowei.controller;
 
+import cn.com.xuxiaowei.bo.User;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -33,6 +34,23 @@ public class IndexRestController {
         map.put("msg", "请求成功");
 
         return ResponseEntity.ok(map);
+    }
+
+    /**
+     * 用户
+     *
+     * @param request  请求
+     * @param response 响应
+     * @return 返回 数据
+     */
+    @RequestMapping("/user")
+    public ResponseEntity<User> user(HttpServletRequest request, HttpServletResponse response) {
+
+        User user = new User();
+        user.setUsername("徐晓伟");
+        user.setPassword("123");
+
+        return ResponseEntity.ok(user);
     }
 
 }
