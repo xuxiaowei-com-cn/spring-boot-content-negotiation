@@ -1,0 +1,7 @@
+spring:
+  mvc:
+    contentnegotiation:
+      media-types:
+        xml: application/xml
+        json: application/json
+      favor-parameter: true
